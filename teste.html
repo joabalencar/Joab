@@ -1,0 +1,1698 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lorena Perfumaria | Brand Collection - Uberlândia MG</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --gold: #D4AF37;
+            --gold-light: #F4E4BC;
+            --black: #1a1a1a;
+            --white: #ffffff;
+            --gray: #f5f5f5;
+            --rose: #C9A9A6;
+            --green: #4ade80;
+            --pink: #E8B4B8;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: var(--black);
+            color: var(--white);
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(26, 26, 26, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 5%;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--gold);
+            letter-spacing: 2px;
+        }
+
+        .logo span {
+            color: var(--white);
+            font-weight: 300;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gold);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .cart-icon {
+            position: relative;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background: var(--gold);
+            color: var(--black);
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(135deg, rgba(26,26,26,0.9) 0%, rgba(26,26,26,0.7) 100%), 
+                        url('https://images.unsplash.com/photo-1594035910387-fea47794261f?w=1920&q=80') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 50%, rgba(212, 175, 55, 0.1) 0%, transparent 50%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 0 2rem;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero h1 span {
+            color: var(--gold);
+            display: block;
+            font-size: 1.5rem;
+            letter-spacing: 8px;
+            margin-top: 0.5rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: var(--gold-light);
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        .location-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(212, 175, 55, 0.2);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            margin-bottom: 2rem;
+            color: var(--gold);
+            font-size: 0.9rem;
+            animation: fadeInUp 1s ease 0.3s both;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 3rem;
+            background: transparent;
+            border: 2px solid var(--gold);
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: 600;
+            letter-spacing: 2px;
+            transition: all 0.3s;
+            animation: fadeInUp 1s ease 0.4s both;
+        }
+
+        .cta-button:hover {
+            background: var(--gold);
+            color: var(--black);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Features */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            padding: 4rem 5%;
+            background: var(--black);
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .feature {
+            text-align: center;
+            padding: 2rem;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            transition: all 0.3s;
+        }
+
+        .feature:hover {
+            border-color: var(--gold);
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--gold);
+        }
+
+        .feature h3 {
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 0.5rem;
+            color: var(--gold);
+        }
+
+        /* Catalog Section */
+        .catalog-section {
+            padding: 6rem 5%;
+            background: linear-gradient(to bottom, var(--black), #0d0d0d);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            color: var(--gold-light);
+            font-size: 1.1rem;
+        }
+
+        .category-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .category-tab {
+            padding: 1rem 2.5rem;
+            background: transparent;
+            border: 2px solid rgba(212, 175, 55, 0.3);
+            color: var(--white);
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            border-radius: 50px;
+        }
+
+        .category-tab:hover, .category-tab.active {
+            background: var(--gold);
+            color: var(--black);
+            border-color: var(--gold);
+        }
+
+        .filters {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 0.8rem 2rem;
+            background: transparent;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            color: var(--white);
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background: var(--gold);
+            color: var(--black);
+            border-color: var(--gold);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .product-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            overflow: hidden;
+            transition: all 0.4s;
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--gold);
+            box-shadow: 0 20px 40px rgba(212, 175, 55, 0.1);
+        }
+
+        .product-image {
+            height: 300px;
+            background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            padding: 1rem;
+        }
+
+        .product-image img {
+            max-height: 90%;
+            max-width: 90%;
+            object-fit: contain;
+            transition: transform 0.5s;
+            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5));
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.1);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--gold);
+            color: var(--black);
+            padding: 0.3rem 1rem;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .product-badge.splash {
+            background: var(--pink);
+            color: var(--black);
+        }
+
+        .product-info {
+            padding: 1.5rem;
+        }
+
+        .product-type {
+            color: var(--rose);
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 0.3rem;
+        }
+
+        .product-number {
+            color: var(--gold);
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--white);
+        }
+
+        .product-inspiration {
+            color: var(--rose);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+
+        .product-size {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.85rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1rem;
+        }
+
+        .product-price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--gold);
+        }
+
+        .add-to-cart {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: var(--gold);
+            border: none;
+            color: var(--black);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            font-size: 1.2rem;
+        }
+
+        .add-to-cart:hover {
+            transform: scale(1.1);
+            box-shadow: 0 5px 20px rgba(212, 175, 55, 0.4);
+        }
+
+        .availability {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: #4ade80;
+            margin-top: 0.5rem;
+        }
+
+        .availability::before {
+            content: '●';
+            color: #4ade80;
+        }
+
+        /* Delivery Section */
+        .delivery-section {
+            padding: 6rem 5%;
+            background: var(--black);
+            position: relative;
+        }
+
+        .delivery-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .delivery-info h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+        }
+
+        .delivery-info p {
+            color: var(--gold-light);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .delivery-checker {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            padding: 2rem;
+            border-radius: 10px;
+        }
+
+        .delivery-checker h3 {
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .cep-input-group {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .cep-input {
+            flex: 1;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            color: var(--white);
+            font-family: 'Montserrat', sans-serif;
+            outline: none;
+        }
+
+        .cep-input::placeholder {
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        .check-btn {
+            padding: 1rem 2rem;
+            background: var(--gold);
+            border: none;
+            color: var(--black);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .check-btn:hover {
+            background: var(--gold-light);
+        }
+
+        .delivery-result {
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+            display: none;
+        }
+
+        .delivery-result.show {
+            display: block;
+            animation: slideIn 0.3s ease;
+        }
+
+        .delivery-result.local {
+            background: rgba(74, 222, 128, 0.15);
+            border: 2px solid var(--green);
+            border-left: 5px solid var(--green);
+        }
+
+        .delivery-result.national {
+            background: rgba(212, 175, 55, 0.1);
+            border-left: 3px solid var(--gold);
+        }
+
+        .delivery-result h4 {
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .delivery-result.local h4 {
+            color: var(--green);
+        }
+
+        .delivery-result.national h4 {
+            color: var(--gold);
+        }
+
+        .delivery-result p {
+            margin: 0.3rem 0;
+            color: var(--white);
+        }
+
+        .delivery-result .highlight {
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .delivery-map {
+            height: 400px;
+            background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .delivery-map::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 10px,
+                rgba(212, 175, 55, 0.03) 10px,
+                rgba(212, 175, 55, 0.03) 20px
+            );
+            animation: move 20s linear infinite;
+        }
+
+        @keyframes move {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(-50px, -50px); }
+        }
+
+        /* Cart Sidebar */
+        .cart-sidebar {
+            position: fixed;
+            top: 0;
+            right: -400px;
+            width: 400px;
+            height: 100vh;
+            background: var(--black);
+            border-left: 1px solid rgba(212, 175, 55, 0.3);
+            z-index: 2000;
+            transition: right 0.4s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cart-sidebar.open {
+            right: 0;
+        }
+
+        .cart-header {
+            padding: 2rem;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .cart-header h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--gold);
+        }
+
+        .close-cart {
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .close-cart:hover {
+            color: var(--gold);
+        }
+
+        .cart-items {
+            flex: 1;
+            overflow-y: auto;
+            padding: 1rem 2rem;
+        }
+
+        .cart-item {
+            display: flex;
+            gap: 1rem;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .cart-item-image {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 5px;
+            padding: 0.5rem;
+        }
+
+        .cart-item-image img {
+            max-height: 70px;
+            max-width: 70px;
+            object-fit: contain;
+        }
+
+        .cart-item-details {
+            flex: 1;
+        }
+
+        .cart-item-name {
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+
+        .cart-item-price {
+            color: var(--gold);
+            font-weight: 700;
+        }
+
+        .cart-item-remove {
+            background: none;
+            border: none;
+            color: #ef4444;
+            cursor: pointer;
+            font-size: 0.9rem;
+            align-self: flex-start;
+        }
+
+        .cart-footer {
+            padding: 2rem;
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .cart-total {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+        }
+
+        .cart-total span:last-child {
+            color: var(--gold);
+            font-weight: 700;
+            font-size: 1.4rem;
+        }
+
+        .checkout-btn {
+            width: 100%;
+            padding: 1rem;
+            background: var(--gold);
+            border: none;
+            color: var(--black);
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .checkout-btn:hover {
+            background: var(--gold-light);
+            transform: translateY(-2px);
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1500;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+        }
+
+        .overlay.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* WhatsApp Float Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            text-decoration: none;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            transition: all 0.3s;
+            animation: pulse 2s infinite;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 30px rgba(37, 211, 102, 0.6);
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        /* Footer */
+        footer {
+            background: #0d0d0d;
+            padding: 4rem 5% 2rem;
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 3rem;
+        }
+
+        .footer-section h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-section p, .footer-section a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            line-height: 2;
+            display: block;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: var(--gold);
+        }
+
+        .contact-highlight {
+            color: var(--gold);
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .footer-bottom {
+            max-width: 1400px;
+            margin: 3rem auto 0;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .features {
+                grid-template-columns: 1fr;
+            }
+            
+            .delivery-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .cart-sidebar {
+                width: 100%;
+                right: -100%;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+            }
+        }
+
+        /* Notification */
+        .notification {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--gold);
+            color: var(--black);
+            padding: 1rem 2rem;
+            border-radius: 5px;
+            font-weight: 600;
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 0.3s;
+            z-index: 3000;
+        }
+
+        .notification.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">LORENA <span>PERFUMARIA</span></div>
+            <ul class="nav-links">
+                <li><a href="#home">Início</a></li>
+                <li><a href="#catalogo">Catálogo</a></li>
+                <li><a href="#entrega">Entrega</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+            <div class="cart-icon" onclick="toggleCart()">
+                🛒
+                <span class="cart-count" id="cartCount">0</span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="location-badge">
+                📍 Uberlândia, Minas Gerais
+            </div>
+            <h1>Lorena Perfumaria <span>BRAND COLLECTION</span></h1>
+            <p>Descubra fragrâncias exclusivas inspiradas nas melhores marcas internacionais. Elegância e sofisticação em cada gota.</p>
+            <a href="#catalogo" class="cta-button">VER CATÁLOGO</a>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features">
+        <div class="feature">
+            <div class="feature-icon">✨</div>
+            <h3>Fragrâncias Originais</h3>
+            <p>Perfumes Brand Collection com qualidade garantida e fixação prolongada.</p>
+        </div>
+        <div class="feature">
+            <div class="feature-icon">🚚</div>
+            <h3>Entrega Rápida</h3>
+            <p>Consulte disponibilidade de entrega para sua região.</p>
+        </div>
+        <div class="feature">
+            <div class="feature-icon">💎</div>
+            <h3>Preço Justo</h3>
+            <p>Luxo acessível com o melhor custo-benefício do mercado.</p>
+        </div>
+    </section>
+
+    <!-- Catalog Section -->
+    <section class="catalog-section" id="catalogo">
+        <div class="section-header">
+            <h2>Catálogo Brand Collection</h2>
+            <p>Escolha entre nossa seleção exclusiva de fragrâncias inspiradas nas marcas mais desejadas</p>
+        </div>
+
+        <div class="category-tabs">
+            <button class="category-tab active" onclick="switchCategory('perfumes')">Perfumes 25ml</button>
+            <button class="category-tab" onclick="switchCategory('splash')">Body Splash 250ml</button>
+        </div>
+
+        <div class="filters" id="genderFilters">
+            <button class="filter-btn active" onclick="filterProducts('all')">Todos</button>
+            <button class="filter-btn" onclick="filterProducts('feminino')">Femininos</button>
+            <button class="filter-btn" onclick="filterProducts('masculino')">Masculinos</button>
+            <button class="filter-btn" onclick="filterProducts('unissex')">Unissex</button>
+        </div>
+
+        <div class="products-grid" id="productsGrid">
+            <!-- Products will be inserted here by JavaScript -->
+        </div>
+    </section>
+
+    <!-- Delivery Section -->
+    <section class="delivery-section" id="entrega">
+        <div class="delivery-container">
+            <div class="delivery-info">
+                <h2>Consulte a Disponibilidade de Entrega</h2>
+                <p>Verificamos a disponibilidade de entrega para sua região em tempo real. Em Uberlândia, entregamos em até <strong style="color: var(--green);">3 horas</strong>! Para outras regiões, consulte o prazo abaixo.</p>
+                
+                <div class="delivery-checker">
+                    <h3>Simular Entrega</h3>
+                    <div class="cep-input-group">
+                        <input type="text" class="cep-input" id="cepInput" placeholder="Digite seu CEP (00000-000)" maxlength="9">
+                        <button class="check-btn" onclick="checkDelivery()">Verificar</button>
+                    </div>
+                    <div class="delivery-result" id="deliveryResult">
+                        <!-- Result will be inserted here by JavaScript -->
+                    </div>
+                </div>
+            </div>
+            <div class="delivery-map">
+                <div style="text-align: center; color: var(--gold); z-index: 2;">
+                    <div style="font-size: 4rem; margin-bottom: 1rem;">📍</div>
+                    <p>Uberlândia - MG</p>
+                    <p style="font-size: 0.9rem; color: var(--green); margin-top: 0.5rem;">⚡ Entrega em 3h</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Sidebar -->
+    <div class="overlay" id="overlay" onclick="toggleCart()"></div>
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h2>Seu Carrinho</h2>
+            <button class="close-cart" onclick="toggleCart()">✕</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <!-- Cart items will be inserted here -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotal">R$ 0,00</span>
+            </div>
+            <button class="checkout-btn">Finalizar Compra</button>
+        </div>
+    </div>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/5534999555120" class="whatsapp-float" target="_blank" title="Fale conosco no WhatsApp">
+        💬
+    </a>
+
+    <!-- Footer -->
+    <footer id="contato">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Lorena Perfumaria</h3>
+                <p>Especializada em perfumes Brand Collection importados. Qualidade e elegância para você.</p>
+                <p style="margin-top: 1rem; color: var(--gold);">📍 Uberlândia - MG</p>
+            </div>
+            <div class="footer-section">
+                <h3>Links Rápidos</h3>
+                <a href="#catalogo">Catálogo</a>
+                <a href="#entrega">Entrega</a>
+                <a href="#sobre">Sobre Nós</a>
+                <a href="#contato">Contato</a>
+            </div>
+            <div class="footer-section">
+                <h3>Contato</h3>
+                <p>📧 contato@lorenaperfumaria.com</p>
+                <p class="contact-highlight">📱 (34) 99955-5120</p>
+                <p style="margin-top: 0.5rem; font-size: 0.9rem;">WhatsApp disponível</p>
+            </div>
+            <div class="footer-section">
+                <h3>Redes Sociais</h3>
+                <a href="#">Instagram</a>
+                <a href="#">Facebook</a>
+                <a href="https://wa.me/5534999555120">WhatsApp</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Lorena Perfumaria - Uberlândia MG. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Notification -->
+    <div class="notification" id="notification">Produto adicionado ao carrinho!</div>
+
+    <script>
+        // Product Data - Brand Collection Catalog EXPANDED
+        const perfumes = [
+            // FEMININOS - Originais
+            {
+                id: 1,
+                number: 'Nº 007',
+                name: 'Eternity Essence',
+                inspiration: 'Inspirado em Dior J\'adore',
+                price: 85.00,
+                gender: 'feminino',
+                image: 'https://m.media-amazon.com/images/I/51c+wqPACBL.jpg',
+                available: true,
+                type: 'perfume',
+                size: '25ml EDP'
+            },
+            {
+                id: 2,
+                number: 'Nº 087',
+                name: 'Olympéa Divine',
+                inspiration: 'Inspirado em Paco Rabanne Olympéa',
+                price: 85.00,
+                gender: 'feminino',
+                image: 'https://m.media-amazon.com/images/I/51tCcG1xA3L.jpg',
+                available: true,
+                type: 'perfume',
+                size: '25ml EDP'
+            },
+            {
+                id: 3,
+                number: 'Nº 294',
+                name: 'Tuberose Mystery',
+                inspiration: 'Inspirado em Givenchy L\'Interdit',
+                price: 85.00,
+                gender: 'feminino',
+                image: 'https://m.media-amazon.com/images/I/61wi1lPQp5L.jpg',
+                available: true,
+                type: 'perfume',
+                size: '25ml EDP'
+            },
+            {
+                id: 4,
+                number: 'Nº 136',
+                name: 'Scandal Night',
+                inspiration: 'Inspirado em Jean Paul Gaultier Scandal',
+                price: 85.00,
+                gender: 'feminino',
+                image: 'https://cdn.awsli.com.br/300x300/2470/2470870/produto/281727752/brand-136-lzlfcme2jt.jpg',
+                available: true,
+                type: 'perfume',
+                size: '25ml EDP'
+            },
+            {
+                id: 5,
+                number: 'Nº 188',
+                name: 'My Way Dream',
+                inspiration: 'Inspirado em Giorgio Armani My Way',
+                price: 85.00,
+                gender: 'feminino',
+                image: 'https://cdn.awsli.com.br/800x800/1336/1336280/produto/226279357/brand-collection---perfume-188-feminino-parfum-25ml---inspira-o-my-way-rf-impor-dmej4rikdp.jpg',
+                available: true,
+                type: 'perfume',
+                size: '25ml EDP'
+            },
+            {
+                id: 6,
+                number: 'Nº 037',
+                name: 'Valentina Rose',
+                inspiration: 'Inspirado em Valentino Valentina',
+                price: 85.00,
+                gender: 'feminino',
+                image: 'https://imgv2-2-f.scribdassets.com/img/document/770292806/original/4421256e48/1?v=1',
+                available: true,
+                type: 'perfume',
+                size: '25ml EDP'
+            },
+            {
+                id: 7,
+                number: 'Nº 048',
+                name: 'Midnight Poison',
+                inspiration: 'Inspirado em Dior Hypnotic Poison',
+                price: 85.00,
+                gender: 'feminino',
+                image: 'https://imgv2-2-f.scribdassets.com/img/document/770292806/original/4421256e48/1?v=1',
+                available: true,
+                type: 'perfume',
+                size: '25ml EDP'
+            },
+            {
+                id: 8,
+                number: 'Nº 073',
+                name: 'Pure Poison',
+                inspiration: 'Inspirado em Dior Pure Poison',
+                price: 85.00,
+                gender: 'feminino',
+                image: 'https://imgv2-2-f.scribdassets.com/img/document/770292806/original/4421256e48/1?v=1',
+                available: true,
+                type: 'perfume',
+                size: '25ml EDP'
+            },
+            // FEMININOS - NOVOS
+            {
+                id: 9,
+                number: 'Nº 003',
+                name: 'Pretty Women',
+                inspiration: 'Inspirado em Carolina Herrera CH',
+                price: 85.00,
+                gender: 'feminino',
+                image: 'https://images.tcdn.com.br/img/img_prod/1101389/brand_collection_003_inspiracao_carolina_herrera_ch_25ml_447_1_cc617f047d6ee581748129fe76e32578.jpg',
+                available: true,
+                type: 'perfume',
+                size: '25ml EDP'
+            },
+            {
+                id: 10,
+                number: 'Nº 194',
+                name: 'Rose Gold',
+                inspiration: 'Inspirado em 212 VIP Rosé',
+                price: 85.00,
+                gender: 'feminino',
+                image: 'https://http2.mlstatic.com/D_NQ_NP_742619-MLB107818466781_022026-O.webp',
+                available: true,
+                type: 'perfume',
+                size: '25ml EDP'
+            },
+            {
+                id: 11,
+                number: 'Nº 370',
+                name: 'DY Purple',
+                inspiration: 'Inspirado em Versace Dylan Purple',
+                price: 85.00,
+                gender: 'feminino',
+                image: 'https://images.tcdn.com.br/img/img_prod/1200261/dy_purple_feminino_25ml_brand_collection_370br_325_1_45f64a43a73a3d02015209c83a31724d.jpg',
+                available: true,
+                type: 'perfume',
+                size: '25ml EDP'
+            },
+            {
+                id: 12,
+                number: 'Nº 026',
+                name: 'Irresistible',
+                inspiration: 'Fragrância Floral Frutada',
+                price: 85.00,
+                gender: 'feminino',
+                image: 'https://cdn.awsli.com.br/2500x2500/2667/2667788/produto/238630253/brand-collection-026---irresistible-25ml-3-1e6mxqx5ki.jpg',
+                available: true,
+                type: 'perfume',
+                size: '25ml EDP'
+            },
+            {
+                id: 13,
+                number: 'Nº 001',
+                name: 'Good Girl',
+                inspiration: 'Inspirado em Carolina Herrera Good Girl',
+                price: 85.00,
+                gender: 'feminino',
+                image: 'https://down-br.img.susercontent.com/file/br-11134207-7r98o-ltndz7b1h33z71',
+                available: true,
+                type: 'perfume',
+                size: '25ml EDP'
+            },
+            {
+                id: 14,
+                number: 'Nº 212',
+                name: 'VIP Party',
+                inspiration: 'Inspirado em 212 VIP',
+                price: 85.00,
+                gender: 'feminino',
+                image: 'https://down-br.img.susercontent.com/file/br-11134207-7r98o-ltndz7b1h33z71',
+                available: true,
+                type: 'perfume',
+                size: '25ml EDP'
+            },
+            // MASCULINOS - Originais
+            {
+                id: 15,
+                number: 'Nº 172',
+                name: 'Invictus Legend',
+                inspiration: 'Inspirado em Paco Rabanne Invictus',
+                price: 85.00,
+                gender: 'masculino',
+                image: 'https://m.media-amazon.com/images/I/41VwtLHksoL._AC_UF1000,1000_QL80_.jpg',
+                available: true,
+                type: 'perfume',
+                size: '25ml EDP'
+            },
+            {
+                id: 16,
+                number: 'Nº 209',
+                name: 'New York Musk',
+                inspiration: 'Inspirado em Bond No. 9',
+                price: 85.00,
+                gender: 'masculino',
+                image: 'https://http2.mlstatic.com/D_Q_NP_940137-MLU71225764069_082023-O.webp',
+                available: true,
+                type: 'perfume',
+                size: '25ml EDP'
+            },
+            {
+                id: 17,
+                number: 'Nº 222',
+                name: 'Oud Wood Luxury',
+                inspiration: 'Inspirado em Tom Ford Oud Wood',
+                price: 85.00,
+                gender: 'masculino',
+                image: 'https://http2.mlstatic.com/D_Q_NP_768063-MLU75826867065_042024-O.webp',
+                available: true,
+                type: 'perfume',
+                size: '25ml EDP'
+            },
+            {
+                id: 18,
+                number: 'Nº 258',
+                name: 'Absolute Gold',
+                inspiration: 'Inspirado em Dolce & Gabbana The One',
+                price: 85.00,
+                gender: 'masculino',
+                image: 'https://http2.mlstatic.com/D_NQ_NP_736128-MLB78792210560_092024-O.webp',
+                available: true,
+                type: 'perfume',
+                size: '25ml EDP'
+            },
+            // MASCULINOS - NOVOS
+            {
+                id: 19,
+                number: 'Nº 100',
+                name: 'Sauva Parfum',
+                inspiration: 'Inspirado em Dior Sauvage',
+                price: 85.00,
+                gender: 'masculino',
+                image: 'https://images.tcdn.com.br/img/img_prod/1144493/no_100_sauva_parfum_brand_collection_25ml_perfume_masculino_4253_1_686c114f48e3da9d237e73e329f4ad57.jpg',
+                available: true,
+                type: 'perfume',
+                size: '25ml EDP'
+            },
+            {
+                id: 20,
+                number: 'Nº 101',
+                name: 'Bleu Intense',
+                inspiration: 'Inspirado em Bleu de Chanel',
+                price: 85.00,
+                gender: 'masculino',
+                image: 'https://images.tcdn.com.br/img/img_prod/1144493/perfume_n_100_sauva_parfum_brand_collection_25ml_1_20250823160535_21bc308fd76b.jpg',
+                available: true,
+                type: 'perfume',
+                size: '25ml EDP'
+            },
+            {
+                id: 21,
+                number: 'Nº 200',
+                name: 'Acqua Di Gio',
+                inspiration: 'Inspirado em Giorgio Armani Acqua Di Gio',
+                price: 85.00,
+                gender: 'masculino',
+                image: 'https://http2.mlstatic.com/D_Q_NP_768063-MLU75826867065_042024-O.webp',
+                available: true,
+                type: 'perfume',
+                size: '25ml EDP'
+            },
+            {
+                id: 22,
+                number: 'Nº 300',
+                name: 'Le Male',
+                inspiration: 'Inspirado em Jean Paul Gaultier Le Male',
+                price: 85.00,
+                gender: 'masculino',
+                image: 'https://http2.mlstatic.com/D_NQ_NP_736128-MLB78792210560_092024-O.webp',
+                available: true,
+                type: 'perfume',
+                size: '25ml EDP'
+            },
+            {
+                id: 23,
+                number: 'Nº 400',
+                name: '1 Million',
+                inspiration: 'Inspirado em Paco Rabanne 1 Million',
+                price: 85.00,
+                gender: 'masculino',
+                image: 'https://http2.mlstatic.com/D_NQ_NP_736128-MLB78792210560_092024-O.webp',
+                available: true,
+                type: 'perfume',
+                size: '25ml EDP'
+            },
+            {
+                id: 24,
+                number: 'Nº 500',
+                name: 'Eros Flame',
+                inspiration: 'Inspirado em Versace Eros',
+                price: 85.00,
+                gender: 'masculino',
+                image: 'https://http2.mlstatic.com/D_Q_NP_940137-MLU71225764069_082023-O.webp',
+                available: true,
+                type: 'perfume',
+                size: '25ml EDP'
+            }
+        ];
+
+        const bodySplashs = [
+            {
+                id: 101,
+                number: 'Dream',
+                name: 'Pure Seduction',
+                inspiration: 'Inspirado em Victoria\'s Secret Pure Seduction',
+                price: 90.00,
+                gender: 'feminino',
+                image: 'https://cdn.dooca.store/63020/products/pure-1.jpeg?v=1722458145',
+                available: true,
+                type: 'splash',
+                size: '250ml Body Splash'
+            },
+            {
+                id: 102,
+                number: 'Dream',
+                name: 'Coconut Passion',
+                inspiration: 'Inspirado em Victoria\'s Secret Coconut Passion',
+                price: 90.00,
+                gender: 'feminino',
+                image: 'https://cdn.dooca.store/63020/products/coco-1-2.jpeg?v=1722190600',
+                available: true,
+                type: 'splash',
+                size: '250ml Body Splash'
+            },
+            {
+                id: 103,
+                number: 'Nº 177',
+                name: 'Khloe',
+                inspiration: 'Fragrância floral frutal',
+                price: 90.00,
+                gender: 'feminino',
+                image: 'https://cdn.dooca.store/63020/products/bs-kloe_495x495+fill_ffffff+crop_center.jpeg?v=1770991840',
+                available: true,
+                type: 'splash',
+                size: '250ml Body Splash'
+            },
+            {
+                id: 104,
+                number: 'Dream',
+                name: 'Love Spell',
+                inspiration: 'Inspirado em Victoria\'s Secret Love Spell',
+                price: 90.00,
+                gender: 'feminino',
+                image: 'https://down-br.img.susercontent.com/file/br-11134207-7r98o-m0b3bfyj29gncc',
+                available: true,
+                type: 'splash',
+                size: '250ml Body Splash'
+            },
+            {
+                id: 105,
+                number: 'Dream',
+                name: 'Strawberry & Champagne',
+                inspiration: 'Inspirado em Victoria\'s Secret',
+                price: 90.00,
+                gender: 'feminino',
+                image: 'https://down-br.img.susercontent.com/file/sg-11134201-7rd5s-m7s3pv4154r1f0',
+                available: true,
+                type: 'splash',
+                size: '250ml Body Splash'
+            },
+            {
+                id: 106,
+                number: 'Nº 166',
+                name: 'Lady Million',
+                inspiration: 'Inspirado em Paco Rabanne Lady Million',
+                price: 90.00,
+                gender: 'feminino',
+                image: 'https://cdn.dooca.store/63020/products/bs-lady_495x495+fill_ffffff+crop_center.jpeg?v=1770991772',
+                available: true,
+                type: 'splash',
+                size: '250ml Body Splash'
+            }
+        ];
+
+        // CEPs de Uberlândia (principais faixas)
+        const uberlandiaCEPs = [
+            '38400', '38401', '38402', '38403', '38404', '38405', '38406', '38407', '38408', '38409',
+            '38410', '38411', '38412', '38413', '38414', '38415', '38416', '38417', '38418', '38419',
+            '38420', '38421', '38422', '38423', '38424', '38425', '38426', '38427', '38428', '38429',
+            '38430', '38431', '38432', '38433', '38434', '38435', '38436', '38437', '38438', '38439',
+            '38440', '38441', '38442', '38443', '38444', '38445', '38446', '38447', '38448', '38449',
+            '38450', '38451', '38452', '38453', '38454', '38455', '38456', '38457', '38458', '38459'
+        ];
+
+        let cart = [];
+        let currentFilter = 'all';
+        let currentCategory = 'perfumes';
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            renderProducts();
+            
+            // CEP mask
+            document.getElementById('cepInput').addEventListener('input', function(e) {
+                let value = e.target.value.replace(/\D/g, '');
+                if (value.length > 5) {
+                    value = value.substring(0, 5) + '-' + value.substring(5, 8);
+                }
+                e.target.value = value;
+            });
+        });
+
+        // Switch Category
+        function switchCategory(category) {
+            currentCategory = category;
+            currentFilter = 'all';
+            
+            // Update tabs
+            document.querySelectorAll('.category-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            // Show/hide gender filters for splash (only feminino)
+            const genderFilters = document.getElementById('genderFilters');
+            if (category === 'splash') {
+                genderFilters.style.display = 'none';
+            } else {
+                genderFilters.style.display = 'flex';
+                // Reset filter buttons
+                document.querySelectorAll('.filter-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                    if (btn.textContent === 'Todos') {
+                        btn.classList.add('active');
+                    }
+                });
+            }
+            
+            renderProducts();
+        }
+
+        // Get current products based on category
+        function getCurrentProducts() {
+            return currentCategory === 'perfumes' ? perfumes : bodySplashs;
+        }
+
+        // Render Products
+        function renderProducts() {
+            const grid = document.getElementById('productsGrid');
+            let productsToShow = getCurrentProducts();
+            
+            // Apply gender filter only for perfumes
+            if (currentCategory === 'perfumes' && currentFilter !== 'all') {
+                productsToShow = productsToShow.filter(p => p.gender === currentFilter);
+            }
+            
+            grid.innerHTML = productsToShow.map(product => `
+                <div class="product-card" data-gender="${product.gender}" data-type="${product.type}">
+                    <div class="product-image">
+                        <img src="${product.image}" alt="${product.name}" onerror="this.src='https://via.placeholder.com/200x200/D4AF37/1a1a1a?text=LORENA'">
+                        ${product.available ? `<span class="product-badge ${product.type === 'splash' ? 'splash' : ''}">${product.type === 'splash' ? 'Body Splash' : 'Disponível'}</span>` : ''}
+                    </div>
+                    <div class="product-info">
+                        <div class="product-type">${product.type === 'splash' ? 'Body Splash' : 'Eau de Parfum'}</div>
+                        <div class="product-number">${product.number}</div>
+                        <h3 class="product-name">${product.name}</h3>
+                        <p class="product-inspiration">${product.inspiration}</p>
+                        <div class="product-size">${product.size}</div>
+                        <div class="availability">Em estoque - Envio imediato</div>
+                        <div class="product-footer">
+                            <span class="product-price">R$ ${product.price.toFixed(2).replace('.', ',')}</span>
+                            <button class="add-to-cart" onclick="addToCart(${product.id})">+</button>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Filter Products
+        function filterProducts(gender) {
+            currentFilter = gender;
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.textContent.toLowerCase().includes(gender === 'all' ? 'todos' : gender)) {
+                    btn.classList.add('active');
+                }
+            });
+            renderProducts();
+        }
+
+        // Add to Cart
+        function addToCart(productId) {
+            const allProducts = [...perfumes, ...bodySplashs];
+            const product = allProducts.find(p => p.id === productId);
+            const existingItem = cart.find(item => item.id === productId);
+            
+            if (existingItem) {
+                existingItem.quantity++;
+            } else {
+                cart.push({ ...product, quantity: 1 });
+            }
+            
+            updateCart();
+            showNotification(`${product.name} adicionado ao carrinho!`);
+        }
+
+        // Remove from Cart
+        function removeFromCart(productId) {
+            cart = cart.filter(item => item.id !== productId);
+            updateCart();
+        }
+
+        // Update Cart
+        function updateCart() {
+            const cartCount = document.getElementById('cartCount');
+            const cartItems = document.getElementById('cartItems');
+            const cartTotal = document.getElementById('cartTotal');
+            
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            
+            cartCount.textContent = totalItems;
+            cartTotal.textContent = `R$ ${totalPrice.toFixed(2).replace('.', ',')}`;
+            
+            if (cart.length === 0) {
+                cartItems.innerHTML = '<p style="text-align: center; color: rgba(255,255,255,0.5); padding: 2rem;">Seu carrinho está vazio</p>';
+            } else {
+                cartItems.innerHTML = cart.map(item => `
+                    <div class="cart-item">
+                        <div class="cart-item-image">
+                            <img src="${item.image}" alt="${item.name}">
+                        </div>
+                        <div class="cart-item-details">
+                            <div class="cart-item-name">${item.name}</div>
+                            <div style="font-size: 0.8rem; color: var(--rose);">${item.size}</div>
+                            <div class="cart-item-price">R$ ${item.price.toFixed(2).replace('.', ',')} x ${item.quantity}</div>
+                        </div>
+                        <button class="cart-item-remove" onclick="removeFromCart(${item.id})">Remover</button>
+                    </div>
+                `).join('');
+            }
+        }
+
+        // Toggle Cart
+        function toggleCart() {
+            const sidebar = document.getElementById('cartSidebar');
+            const overlay = document.getElementById('overlay');
+            
+            sidebar.classList.toggle('open');
+            overlay.classList.toggle('show');
+        }
+
+        // Check Delivery
+        function checkDelivery() {
+            const cepInput = document.getElementById('cepInput');
+            const result = document.getElementById('deliveryResult');
+            const cep = cepInput.value.replace(/\D/g, '');
+            
+            if (cep.length < 8) {
+                alert('Por favor, digite um CEP válido');
+                return;
+            }
+            
+            const cepPrefix = cep.substring(0, 5);
+            const isUberlandia = uberlandiaCEPs.includes(cepPrefix);
+            
+            setTimeout(() => {
+                result.classList.remove('local', 'national');
+                
+                if (isUberlandia) {
+                    result.classList.add('local');
+                    result.innerHTML = `
+                        <h4>🚀 Entrega Expressa Disponível!</h4>
+                        <p class="highlight">⚡ Prazo: 3 horas</p>
+                        <p>📍 Local: Uberlândia - MG</p>
+                        <p>💰 Frete: R$ 10,00 (Grátis acima de R$ 150)</p>
+                        <p style="margin-top: 0.5rem; font-size: 0.9rem; color: var(--green);">Entrega rápida garantida!</p>
+                    `;
+                } else {
+                    result.classList.add('national');
+                    result.innerHTML = `
+                        <h4>✓ Entrega Disponível!</h4>
+                        <p class="highlight">📦 Prazo: 3 a 7 dias úteis</p>
+                        <p>🚚 Transportadora parceira</p>
+                        <p>💰 Frete: R$ 15,00 (Grátis acima de R$ 200)</p>
+                    `;
+                }
+                
+                result.classList.add('show');
+            }, 500);
+        }
+
+        // Show Notification
+        function showNotification(message) {
+            const notification = document.getElementById('notification');
+            notification.textContent = message;
+            notification.classList.add('show');
+            
+            setTimeout(() => {
+                notification.classList.remove('show');
+            }, 3000);
+        }
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
