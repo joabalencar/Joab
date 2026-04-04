@@ -6,6 +6,7 @@
     <title>Lorena Perfumaria | Brand Collection - Uberlândia MG</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
+        /* Estilos Base e Cores */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
             --gold: #D4AF37; --gold-light: #F4E4BC; --black: #1a1a1a;
@@ -13,16 +14,19 @@
         }
         body { font-family: 'Montserrat', sans-serif; background: var(--black); color: var(--white); overflow-x: hidden; }
 
+        /* Header */
         header { position: fixed; top: 0; width: 100%; background: rgba(26, 26, 26, 0.95); backdrop-filter: blur(10px); z-index: 1000; padding: 1rem 5%; border-bottom: 1px solid rgba(212, 175, 55, 0.3); }
         nav { display: flex; justify-content: space-between; align-items: center; max-width: 1400px; margin: 0 auto; }
         .logo { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 700; color: var(--gold); letter-spacing: 2px; }
         .cart-icon { position: relative; cursor: pointer; font-size: 1.5rem; }
         .cart-count { position: absolute; top: -10px; right: -10px; background: var(--gold); color: var(--black); border-radius: 50%; width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 700; }
 
+        /* Hero Section */
         .hero { height: 50vh; background: linear-gradient(135deg, rgba(26,26,26,0.9) 0%, rgba(26,26,26,0.7) 100%), url('https://images.unsplash.com/photo-1594035910387-fea47794261f?w=1920&q=80') center/cover; display: flex; align-items: center; justify-content: center; text-align: center; padding-top: 80px; }
         .hero h1 { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 0.5rem; }
         .hero h1 span { color: var(--gold); display: block; font-size: 1rem; letter-spacing: 5px; text-transform: uppercase; }
 
+        /* Catálogo */
         .catalog-section { padding: 4rem 5%; max-width: 1400px; margin: 0 auto; }
         .category-tabs { display: flex; justify-content: center; gap: 1rem; margin-bottom: 3rem; }
         .category-tab { padding: 0.8rem 1.5rem; background: transparent; border: 1px solid var(--gold); color: var(--white); cursor: pointer; border-radius: 50px; font-weight: 600; transition: 0.3s; }
@@ -37,6 +41,7 @@
         .product-price { font-size: 1.3rem; color: var(--gold); font-weight: 700; margin-bottom: 1rem; }
         .add-to-cart { width: 100%; padding: 0.8rem; background: var(--gold); border: none; font-weight: 700; cursor: pointer; border-radius: 4px; transition: 0.3s; }
 
+        /* Carrinho Lateral */
         .cart-sidebar { position: fixed; top: 0; right: -400px; width: 400px; height: 100vh; background: var(--black); border-left: 1px solid var(--gold); z-index: 2000; transition: 0.4s; display: flex; flex-direction: column; }
         .cart-sidebar.open { right: 0; }
         .cart-header { padding: 1.5rem; border-bottom: 1px solid rgba(212, 175, 55, 0.2); display: flex; justify-content: space-between; align-items: center; }
@@ -44,6 +49,7 @@
         .cart-footer { padding: 1.5rem; border-top: 1px solid var(--gold); background: #111; }
         .checkout-btn { width: 100%; padding: 1.2rem; background: var(--gold); border: none; font-weight: 800; cursor: pointer; font-size: 1rem; border-radius: 4px; }
 
+        /* Modal de Pagamento e Entrega */
         .payment-modal {
             position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0.9);
             width: 95%; max-width: 450px; background: #111; border: 2px solid var(--gold);
@@ -51,29 +57,30 @@
             max-height: 90vh; overflow-y: auto;
         }
         .payment-modal.open { visibility: visible; opacity: 1; transform: translate(-50%, -50%) scale(1); }
-        .method-option {
-            padding: 1rem; border: 1px solid rgba(212, 175, 55, 0.2); margin-bottom: 0.8rem;
+        .method-option { 
+            padding: 1rem; border: 1px solid rgba(212, 175, 55, 0.2); margin-bottom: 0.8rem; 
             cursor: pointer; display: flex; align-items: center; gap: 1rem; transition: 0.2s; border-radius: 6px;
         }
         .method-option:hover, .method-option.selected { background: rgba(212, 175, 55, 0.1); border-color: var(--gold); }
         .payment-details { display: none; margin: 0.5rem 0 1rem; padding: 1rem; background: rgba(255,255,255,0.03); border-radius: 6px; border: 1px dashed var(--gold); }
         .payment-details.show { display: block; }
-
+        
+        /* Formulário de Entrega */
         .delivery-form { display: none; margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(212, 175, 55, 0.2); }
         .delivery-form.show { display: block; }
         .form-title { font-size: 0.85rem; color: var(--gold); margin-bottom: 1rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
-
-        .confirm-order-btn { width: 100%; padding: 1.2rem; background: #25D366; color: #000; border: none; font-weight: 800; cursor: pointer; border-radius: 6px; margin-top: 1rem; display: flex; align-items: center; justify-content: center; gap: 0.5rem; font-size: 1rem; }
-        .confirm-order-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+        
+        .confirm-order-btn { width: 100%; padding: 1.2rem; background: var(--green); color: #000; border: none; font-weight: 800; cursor: pointer; border-radius: 6px; margin-top: 1rem; }
         .input-field { width: 100%; padding: 0.8rem; background: #222; border: 1px solid #444; color: #fff; margin-bottom: 0.8rem; border-radius: 4px; outline: none; font-family: 'Montserrat'; }
         .input-field:focus { border-color: var(--gold); }
 
+        /* Overlay */
         .overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); z-index: 1500; visibility: hidden; opacity: 0; transition: 0.3s; backdrop-filter: blur(3px); }
         .overlay.show { visibility: visible; opacity: 1; }
 
         .notification { position: fixed; bottom: 2rem; right: 2rem; background: var(--gold); color: #000; padding: 1rem 2rem; border-radius: 6px; z-index: 4000; opacity: 0; transition: 0.3s; font-weight: 600; pointer-events: none; }
         .notification.show { opacity: 1; }
-
+        
         @media (max-width: 480px) { .cart-sidebar { width: 100%; right: -100%; } }
     </style>
 </head>
@@ -121,7 +128,7 @@
 
     <div class="payment-modal" id="paymentModal">
         <h2 style="font-family:'Playfair Display', serif; color:var(--gold); margin-bottom:1.5rem; text-align: center;">Concluir Pedido</h2>
-
+        
         <div id="paymentSelection">
             <p style="font-size:0.8rem; margin-bottom:0.8rem; color:rgba(255,255,255,0.6);">1. Selecione a forma de pagamento:</p>
             <div class="method-option" id="opt-pix" onclick="selectPayment('pix')">
@@ -141,7 +148,6 @@
             <div class="method-option" id="opt-delivery" onclick="selectPayment('delivery')">
                 <span>🚚</span> <div><strong>Pagar na Entrega</strong></div>
             </div>
-            <div id="deliveryArea" class="payment-details" style="display:none;"></div>
         </div>
 
         <div class="delivery-form" id="deliveryForm">
@@ -150,10 +156,8 @@
             <input type="text" id="custPhone" class="input-field" placeholder="WhatsApp (34) 9XXXX-XXXX">
             <input type="text" id="custAddress" class="input-field" placeholder="Rua, Número, Bairro">
             <input type="text" id="custRef" class="input-field" placeholder="Ponto de Referência (Opcional)">
-
-            <button class="confirm-order-btn" id="finishBtn" onclick="processOrder()">
-                <span>📲</span> CONFIRMAR PEDIDO VIA WHATSAPP
-            </button>
+            
+            <button class="confirm-order-btn" id="finishBtn" onclick="processOrder()">CONFIRMAR PEDIDO</button>
         </div>
 
         <button style="width:100%; background:none; border:none; color:#555; margin-top:15px; cursor:pointer;" onclick="closeAll()">Voltar</button>
@@ -162,11 +166,6 @@
     <div class="notification" id="notification"></div>
 
     <script>
-        // =====================================================
-        // SEU NÚMERO DE WHATSAPP (55 = Brasil + DDD + número)
-        // =====================================================
-        const WHATSAPP_NUMBER = '5534997357547';
-
         const perfumes = [
             { id: 1, name: 'Eternity Essence', price: 85.00, image: 'https://m.media-amazon.com/images/I/51c+wqPACBL.jpg', type: 'perfume' },
             { id: 2, name: 'Scandal Night', price: 85.00, image: 'https://cdn.awsli.com.br/300x300/2470/2470870/produto/281727752/brand-136-lzlfcme2jt.jpg', type: 'perfume' },
@@ -216,7 +215,7 @@
             document.getElementById('cartCount').innerText = cart.length;
             const total = cart.reduce((s, i) => s + i.price, 0);
             document.getElementById('cartTotal').innerText = `R$ ${total.toFixed(2).replace('.',',')}`;
-
+            
             if(cart.length === 0) {
                 itemsCont.innerHTML = '<p style="text-align:center; color:#555; margin-top:2rem;">Vazio</p>';
                 return;
@@ -249,68 +248,36 @@
             document.querySelectorAll('.method-option').forEach(m => m.classList.remove('selected'));
             document.getElementById('opt-' + method).classList.add('selected');
             document.getElementById(method + 'Area').classList.add('show');
+            
+            // Mostra os campos de entrega
             document.getElementById('deliveryForm').classList.add('show');
         }
 
-        function buildWhatsAppMessage(name, phone, address, ref) {
-            const paymentLabels = { pix: 'PIX', card: 'Cartão de Crédito', delivery: 'Pagar na Entrega' };
-            const total = cart.reduce((s, i) => s + i.price, 0);
-
-            const itemsList = cart.map((p, i) =>
-                `  ${i + 1}. ${p.name} — R$ ${p.price.toFixed(2).replace('.',',')}`
-            ).join('\n');
-
-            const msg =
-`🛍️ *NOVO PEDIDO - Lorena Perfumaria*
-━━━━━━━━━━━━━━━━━━━━
-👤 *Cliente:* ${name}
-📞 *Telefone:* ${phone}
-📍 *Endereço:* ${address}${ref ? `\n📌 *Referência:* ${ref}` : ''}
-━━━━━━━━━━━━━━━━━━━━
-🧴 *Itens do Pedido:*
-${itemsList}
-━━━━━━━━━━━━━━━━━━━━
-💰 *Total:* R$ ${total.toFixed(2).replace('.',',')}
-💳 *Pagamento:* ${paymentLabels[selectedMethod]}
-━━━━━━━━━━━━━━━━━━━━`;
-
-            return encodeURIComponent(msg);
-        }
-
         function processOrder() {
-            const name = document.getElementById('custName').value.trim();
-            const phone = document.getElementById('custPhone').value.trim();
-            const address = document.getElementById('custAddress').value.trim();
-            const ref = document.getElementById('custRef').value.trim();
+            const name = document.getElementById('custName').value;
+            const phone = document.getElementById('custPhone').value;
+            const address = document.getElementById('custAddress').value;
 
-            if(!selectedMethod) return alert("Selecione a forma de pagamento!");
+            if(!selectedMethod) return alert("Selecione o pagamento!");
             if(!name || !phone || !address) return alert("Preencha Nome, Telefone e Endereço!");
 
             const btn = document.getElementById('finishBtn');
-            btn.innerText = "Abrindo WhatsApp...";
+            btn.innerText = "PROCESSANDO...";
             btn.disabled = true;
 
-            const message = buildWhatsAppMessage(name, phone, address, ref);
-            const whatsappURL = `https://wa.me/${WHATSAPP_NUMBER}?text=${message}`;
-
-            window.open(whatsappURL, '_blank');
-
             setTimeout(() => {
+                alert(`PEDIDO CONFIRMADO! 🎉\n\nObrigado, ${name}!\nEntregaremos em: ${address}.\nEntraremos em contato no ${phone}.`);
                 cart = [];
                 updateCart();
                 closeAll();
+                // Limpar campos
                 document.getElementById('custName').value = '';
                 document.getElementById('custPhone').value = '';
                 document.getElementById('custAddress').value = '';
-                document.getElementById('custRef').value = '';
                 document.getElementById('deliveryForm').classList.remove('show');
-                document.querySelectorAll('.method-option').forEach(m => m.classList.remove('selected'));
-                document.querySelectorAll('.payment-details').forEach(d => d.classList.remove('show'));
-                selectedMethod = '';
-                btn.innerHTML = '<span>📲</span> CONFIRMAR PEDIDO VIA WHATSAPP';
+                btn.innerText = "CONFIRMAR PEDIDO";
                 btn.disabled = false;
-                showNotify("Pedido enviado! 🎉");
-            }, 1000);
+            }, 2000);
         }
 
         function closeAll() {
@@ -322,7 +289,7 @@ ${itemsList}
         function showNotify(msg) {
             const n = document.getElementById('notification');
             n.innerText = msg; n.classList.add('show');
-            setTimeout(() => n.classList.remove('show'), 2500);
+            setTimeout(() => n.classList.remove('show'), 2000);
         }
     </script>
 </body>
