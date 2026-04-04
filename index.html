@@ -10,8 +10,7 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
             --gold: #D4AF37; --gold-light: #F4E4BC; --black: #1a1a1a;
-            --white: #ffffff; --gray: #f5f5f5; --rose: #C9A9A6;
-            --green: #4ade80;
+            --white: #ffffff; --gray: #f5f5f5; --green: #4ade80;
         }
         body { font-family: 'Montserrat', sans-serif; background: var(--black); color: var(--white); overflow-x: hidden; }
 
@@ -23,59 +22,64 @@
         .cart-count { position: absolute; top: -10px; right: -10px; background: var(--gold); color: var(--black); border-radius: 50%; width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 700; }
 
         /* Hero Section */
-        .hero { height: 60vh; background: linear-gradient(135deg, rgba(26,26,26,0.9) 0%, rgba(26,26,26,0.7) 100%), url('https://images.unsplash.com/photo-1594035910387-fea47794261f?w=1920&q=80') center/cover; display: flex; align-items: center; justify-content: center; text-align: center; padding-top: 80px; }
-        .hero h1 { font-family: 'Playfair Display', serif; font-size: 3rem; margin-bottom: 1rem; }
-        .hero h1 span { color: var(--gold); display: block; font-size: 1.2rem; letter-spacing: 5px; text-transform: uppercase; }
+        .hero { height: 50vh; background: linear-gradient(135deg, rgba(26,26,26,0.9) 0%, rgba(26,26,26,0.7) 100%), url('https://images.unsplash.com/photo-1594035910387-fea47794261f?w=1920&q=80') center/cover; display: flex; align-items: center; justify-content: center; text-align: center; padding-top: 80px; }
+        .hero h1 { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 0.5rem; }
+        .hero h1 span { color: var(--gold); display: block; font-size: 1rem; letter-spacing: 5px; text-transform: uppercase; }
 
         /* Catálogo */
         .catalog-section { padding: 4rem 5%; max-width: 1400px; margin: 0 auto; }
         .category-tabs { display: flex; justify-content: center; gap: 1rem; margin-bottom: 3rem; }
-        .category-tab { padding: 0.8rem 2rem; background: transparent; border: 1px solid var(--gold); color: var(--white); cursor: pointer; border-radius: 50px; font-weight: 600; transition: 0.3s; }
+        .category-tab { padding: 0.8rem 1.5rem; background: transparent; border: 1px solid var(--gold); color: var(--white); cursor: pointer; border-radius: 50px; font-weight: 600; transition: 0.3s; }
         .category-tab.active { background: var(--gold); color: var(--black); }
 
-        .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 2rem; }
+        .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 2rem; }
         .product-card { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(212, 175, 55, 0.1); padding: 1.5rem; text-align: center; transition: 0.3s; border-radius: 8px; }
         .product-card:hover { border-color: var(--gold); transform: translateY(-5px); }
-        .product-image { height: 200px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; }
+        .product-image { height: 180px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; }
         .product-image img { max-height: 100%; max-width: 100%; object-fit: contain; }
-        .product-name { font-size: 1.1rem; margin-bottom: 0.5rem; min-height: 50px; }
-        .product-price { font-size: 1.4rem; color: var(--gold); font-weight: 700; margin-bottom: 1rem; }
+        .product-name { font-size: 1rem; margin-bottom: 0.5rem; min-height: 40px; }
+        .product-price { font-size: 1.3rem; color: var(--gold); font-weight: 700; margin-bottom: 1rem; }
         .add-to-cart { width: 100%; padding: 0.8rem; background: var(--gold); border: none; font-weight: 700; cursor: pointer; border-radius: 4px; transition: 0.3s; }
-        .add-to-cart:hover { background: var(--gold-light); }
 
         /* Carrinho Lateral */
         .cart-sidebar { position: fixed; top: 0; right: -400px; width: 400px; height: 100vh; background: var(--black); border-left: 1px solid var(--gold); z-index: 2000; transition: 0.4s; display: flex; flex-direction: column; }
         .cart-sidebar.open { right: 0; }
-        .cart-header { padding: 2rem; border-bottom: 1px solid rgba(212, 175, 55, 0.2); display: flex; justify-content: space-between; align-items: center; }
-        .cart-items { flex: 1; overflow-y: auto; padding: 1.5rem; }
-        .cart-footer { padding: 2rem; border-top: 1px solid var(--gold); background: #111; }
+        .cart-header { padding: 1.5rem; border-bottom: 1px solid rgba(212, 175, 55, 0.2); display: flex; justify-content: space-between; align-items: center; }
+        .cart-items { flex: 1; overflow-y: auto; padding: 1rem; }
+        .cart-footer { padding: 1.5rem; border-top: 1px solid var(--gold); background: #111; }
         .checkout-btn { width: 100%; padding: 1.2rem; background: var(--gold); border: none; font-weight: 800; cursor: pointer; font-size: 1rem; border-radius: 4px; }
 
-        /* Modal de Pagamento (Checkout Interno) */
+        /* Modal de Pagamento e Entrega */
         .payment-modal {
             position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0.9);
             width: 95%; max-width: 450px; background: #111; border: 2px solid var(--gold);
             padding: 2rem; z-index: 3000; visibility: hidden; opacity: 0; transition: 0.3s; border-radius: 12px;
-            box-shadow: 0 0 50px rgba(0,0,0,0.8);
+            max-height: 90vh; overflow-y: auto;
         }
         .payment-modal.open { visibility: visible; opacity: 1; transform: translate(-50%, -50%) scale(1); }
         .method-option { 
-            padding: 1rem; border: 1px solid rgba(212, 175, 55, 0.2); margin-bottom: 1rem; 
+            padding: 1rem; border: 1px solid rgba(212, 175, 55, 0.2); margin-bottom: 0.8rem; 
             cursor: pointer; display: flex; align-items: center; gap: 1rem; transition: 0.2s; border-radius: 6px;
         }
         .method-option:hover, .method-option.selected { background: rgba(212, 175, 55, 0.1); border-color: var(--gold); }
-        .payment-details { display: none; margin: 1rem 0; padding: 1rem; background: rgba(255,255,255,0.03); border-radius: 6px; border: 1px dashed var(--gold); }
+        .payment-details { display: none; margin: 0.5rem 0 1rem; padding: 1rem; background: rgba(255,255,255,0.03); border-radius: 6px; border: 1px dashed var(--gold); }
         .payment-details.show { display: block; }
-        .confirm-order-btn { width: 100%; padding: 1.2rem; background: var(--green); color: #000; border: none; font-weight: 800; cursor: pointer; border-radius: 6px; margin-top: 1rem; }
         
-        /* Overlay Escuro */
+        /* Formulário de Entrega */
+        .delivery-form { display: none; margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(212, 175, 55, 0.2); }
+        .delivery-form.show { display: block; }
+        .form-title { font-size: 0.85rem; color: var(--gold); margin-bottom: 1rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
+        
+        .confirm-order-btn { width: 100%; padding: 1.2rem; background: var(--green); color: #000; border: none; font-weight: 800; cursor: pointer; border-radius: 6px; margin-top: 1rem; }
+        .input-field { width: 100%; padding: 0.8rem; background: #222; border: 1px solid #444; color: #fff; margin-bottom: 0.8rem; border-radius: 4px; outline: none; font-family: 'Montserrat'; }
+        .input-field:focus { border-color: var(--gold); }
+
+        /* Overlay */
         .overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); z-index: 1500; visibility: hidden; opacity: 0; transition: 0.3s; backdrop-filter: blur(3px); }
         .overlay.show { visibility: visible; opacity: 1; }
 
-        /* Notificações e Inputs */
         .notification { position: fixed; bottom: 2rem; right: 2rem; background: var(--gold); color: #000; padding: 1rem 2rem; border-radius: 6px; z-index: 4000; opacity: 0; transition: 0.3s; font-weight: 600; pointer-events: none; }
         .notification.show { opacity: 1; }
-        .input-field { width: 100%; padding: 0.8rem; background: #222; border: 1px solid #444; color: #fff; margin-bottom: 0.8rem; border-radius: 4px; outline: none; }
         
         @media (max-width: 480px) { .cart-sidebar { width: 100%; right: -100%; } }
     </style>
@@ -91,10 +95,10 @@
         </nav>
     </header>
 
-    <section class="hero" id="home">
+    <section class="hero">
         <div class="hero-content">
             <h1>Lorena Perfumaria <span>BRAND COLLECTION</span></h1>
-            <p>Fragrâncias de Luxo em Uberlândia</p>
+            <p>Uberlândia - MG</p>
         </div>
     </section>
 
@@ -110,13 +114,12 @@
 
     <div class="cart-sidebar" id="cartSidebar">
         <div class="cart-header">
-            <h2 style="color: var(--gold); font-family: 'Playfair Display';">Meu Carrinho</h2>
+            <h2 style="color: var(--gold); font-family: 'Playfair Display';">Carrinho</h2>
             <button style="background:none; border:none; color:#fff; cursor:pointer; font-size: 1.5rem;" onclick="toggleCart()">✕</button>
         </div>
-        <div class="cart-items" id="cartItems">
-            </div>
+        <div class="cart-items" id="cartItems"></div>
         <div class="cart-footer">
-            <div style="display:flex; justify-content:space-between; margin-bottom:1.5rem; font-size:1.3rem;">
+            <div style="display:flex; justify-content:space-between; margin-bottom:1rem; font-size:1.2rem;">
                 <span>Total:</span> <span id="cartTotal" style="color:var(--gold); font-weight:800;">R$ 0,00</span>
             </div>
             <button class="checkout-btn" onclick="openCheckout()">FINALIZAR COMPRA</button>
@@ -124,48 +127,49 @@
     </div>
 
     <div class="payment-modal" id="paymentModal">
-        <h2 style="font-family:'Playfair Display', serif; color:var(--gold); margin-bottom:1rem; text-align: center;">Finalizar Pedido</h2>
+        <h2 style="font-family:'Playfair Display', serif; color:var(--gold); margin-bottom:1.5rem; text-align: center;">Concluir Pedido</h2>
         
-        <div class="method-option" id="opt-pix" onclick="selectPayment('pix')">
-            <span>📱</span> <div><strong>PIX</strong><br><small>Aprovação imediata</small></div>
-        </div>
-        <div id="pixArea" class="payment-details">
-            <p style="font-size:0.8rem; text-align:center; margin-bottom:8px;">Copie a Chave CNPJ abaixo:</p>
-            <p style="background:#000; padding:12px; text-align:center; color:var(--gold); font-weight:800; border: 1px solid var(--gold);">12.345.678/0001-90</p>
-            <small style="display:block; text-align:center; margin-top:5px; color: #aaa;">Lorena Perfumaria - Uberlândia</small>
-        </div>
+        <div id="paymentSelection">
+            <p style="font-size:0.8rem; margin-bottom:0.8rem; color:rgba(255,255,255,0.6);">1. Selecione a forma de pagamento:</p>
+            <div class="method-option" id="opt-pix" onclick="selectPayment('pix')">
+                <span>📱</span> <div><strong>PIX</strong></div>
+            </div>
+            <div id="pixArea" class="payment-details">
+                <p style="font-size:0.75rem; text-align:center;">Chave CNPJ: <strong>12.345.678/0001-90</strong></p>
+            </div>
 
-        <div class="method-option" id="opt-card" onclick="selectPayment('card')">
-            <span>💳</span> <div><strong>Cartão de Crédito</strong><br><small>Até 12x no checkout</small></div>
-        </div>
-        <div id="cardArea" class="payment-details">
-            <input type="text" class="input-field" placeholder="0000 0000 0000 0000">
-            <div style="display:flex; gap:10px;">
-                <input type="text" class="input-field" placeholder="MM/AA">
-                <input type="text" class="input-field" placeholder="CVC">
+            <div class="method-option" id="opt-card" onclick="selectPayment('card')">
+                <span>💳</span> <div><strong>Cartão de Crédito</strong></div>
+            </div>
+            <div id="cardArea" class="payment-details">
+                <input type="text" class="input-field" placeholder="Número do Cartão">
+            </div>
+
+            <div class="method-option" id="opt-delivery" onclick="selectPayment('delivery')">
+                <span>🚚</span> <div><strong>Pagar na Entrega</strong></div>
             </div>
         </div>
 
-        <div class="method-option" id="opt-delivery" onclick="selectPayment('delivery')">
-            <span>🚚</span> <div><strong>Pagar na Entrega</strong><br><small>Dinheiro ou Maquininha</small></div>
-        </div>
-        <div id="deliveryArea" class="payment-details">
-            <p style="font-size:0.85rem; text-align: center; color: var(--green);">Válido apenas para Uberlândia - MG</p>
+        <div class="delivery-form" id="deliveryForm">
+            <p class="form-title">2. Dados para Entrega</p>
+            <input type="text" id="custName" class="input-field" placeholder="Seu Nome Completo">
+            <input type="text" id="custPhone" class="input-field" placeholder="WhatsApp (34) 9XXXX-XXXX">
+            <input type="text" id="custAddress" class="input-field" placeholder="Rua, Número, Bairro">
+            <input type="text" id="custRef" class="input-field" placeholder="Ponto de Referência (Opcional)">
+            
+            <button class="confirm-order-btn" id="finishBtn" onclick="processOrder()">CONFIRMAR PEDIDO</button>
         </div>
 
-        <button class="confirm-order-btn" id="finishBtn" onclick="processOrder()">CONFIRMAR PEDIDO</button>
-        <button style="width:100%; background:none; border:none; color:#555; margin-top:15px; cursor:pointer; font-weight: 600;" onclick="closeAll()">Voltar ao carrinho</button>
+        <button style="width:100%; background:none; border:none; color:#555; margin-top:15px; cursor:pointer;" onclick="closeAll()">Voltar</button>
     </div>
 
     <div class="notification" id="notification"></div>
 
     <script>
-        // Dados dos Produtos
         const perfumes = [
             { id: 1, name: 'Eternity Essence', price: 85.00, image: 'https://m.media-amazon.com/images/I/51c+wqPACBL.jpg', type: 'perfume' },
             { id: 2, name: 'Scandal Night', price: 85.00, image: 'https://cdn.awsli.com.br/300x300/2470/2470870/produto/281727752/brand-136-lzlfcme2jt.jpg', type: 'perfume' },
-            { id: 3, name: 'Sauva Parfum', price: 85.00, image: 'https://images.tcdn.com.br/img/img_prod/1144493/no_100_sauva_parfum_brand_collection_25ml_perfume_masculino_4253_1_686c114f48e3da9d237e73e329f4ad57.jpg', type: 'perfume' },
-            { id: 4, name: 'Invictus Legend', price: 85.00, image: 'https://m.media-amazon.com/images/I/41VwtLHksoL._AC_UF1000,1000_QL80_.jpg', type: 'perfume' }
+            { id: 3, name: 'Sauva Parfum', price: 85.00, image: 'https://images.tcdn.com.br/img/img_prod/1144493/no_100_sauva_parfum_brand_collection_25ml_perfume_masculino_4253_1_686c114f48e3da9d237e73e329f4ad57.jpg', type: 'perfume' }
         ];
         const bodySplashs = [
             { id: 101, name: 'Pure Seduction', price: 90.00, image: 'https://cdn.dooca.store/63020/products/pure-1.jpeg?v=1722458145', type: 'splash' },
@@ -176,7 +180,6 @@
         let currentCategory = 'perfumes';
         let selectedMethod = '';
 
-        // Renderização Inicial
         window.onload = () => renderProducts();
 
         function switchCategory(cat) {
@@ -204,7 +207,7 @@
             const product = list.find(p => p.id === id);
             cart.push({...product});
             updateCart();
-            showNotify("Produto adicionado!");
+            showNotify("Adicionado!");
         }
 
         function updateCart() {
@@ -214,42 +217,27 @@
             document.getElementById('cartTotal').innerText = `R$ ${total.toFixed(2).replace('.',',')}`;
             
             if(cart.length === 0) {
-                itemsCont.innerHTML = '<p style="text-align:center; color:#555; margin-top:2rem;">Carrinho vazio</p>';
+                itemsCont.innerHTML = '<p style="text-align:center; color:#555; margin-top:2rem;">Vazio</p>';
                 return;
             }
 
             itemsCont.innerHTML = cart.map((p, idx) => `
-                <div style="display:flex; align-items:center; gap:10px; margin-bottom:15px; border-bottom:1px solid #222; padding-bottom:10px;">
-                    <img src="${p.image}" style="width:50px; height:50px; object-fit:contain;">
-                    <div style="flex:1">
-                        <div style="font-size:0.9rem;">${p.name}</div>
-                        <div style="color:var(--gold); font-weight:700;">R$ ${p.price.toFixed(2)}</div>
-                    </div>
-                    <button onclick="removeFromCart(${idx})" style="background:none; border:none; color:#ff4444; cursor:pointer; font-weight:bold;">✕</button>
+                <div style="display:flex; align-items:center; gap:10px; margin-bottom:10px; border-bottom:1px solid #222; padding-bottom:5px;">
+                    <img src="${p.image}" style="width:40px; height:40px; object-fit:contain;">
+                    <div style="flex:1; font-size:0.85rem;">${p.name}<br><strong>R$ ${p.price.toFixed(2)}</strong></div>
+                    <button onclick="cart.splice(${idx},1);updateCart();" style="background:none; border:none; color:red; cursor:pointer;">✕</button>
                 </div>
             `).join('');
         }
 
-        function removeFromCart(index) {
-            cart.splice(index, 1);
-            updateCart();
-        }
-
         function toggleCart() {
-            const sidebar = document.getElementById('cartSidebar');
-            const overlay = document.getElementById('overlay');
-            sidebar.classList.toggle('open');
-            overlay.classList.toggle('show');
+            document.getElementById('cartSidebar').classList.toggle('open');
+            document.getElementById('overlay').classList.toggle('show');
         }
 
-        // Funções do Checkout
         function openCheckout() {
-            if(cart.length === 0) return showNotify("Seu carrinho está vazio!");
-            
-            // Fecha carrinho, mas mantém o fundo escuro
+            if(cart.length === 0) return showNotify("Carrinho vazio!");
             document.getElementById('cartSidebar').classList.remove('open');
-            
-            // Abre o modal de pagamento
             document.getElementById('paymentModal').classList.add('open');
             document.getElementById('overlay').classList.add('show');
         }
@@ -258,23 +246,35 @@
             selectedMethod = method;
             document.querySelectorAll('.payment-details').forEach(d => d.classList.remove('show'));
             document.querySelectorAll('.method-option').forEach(m => m.classList.remove('selected'));
-            
             document.getElementById('opt-' + method).classList.add('selected');
             document.getElementById(method + 'Area').classList.add('show');
+            
+            // Mostra os campos de entrega
+            document.getElementById('deliveryForm').classList.add('show');
         }
 
         function processOrder() {
-            if(!selectedMethod) return alert("Por favor, selecione uma forma de pagamento.");
-            
+            const name = document.getElementById('custName').value;
+            const phone = document.getElementById('custPhone').value;
+            const address = document.getElementById('custAddress').value;
+
+            if(!selectedMethod) return alert("Selecione o pagamento!");
+            if(!name || !phone || !address) return alert("Preencha Nome, Telefone e Endereço!");
+
             const btn = document.getElementById('finishBtn');
             btn.innerText = "PROCESSANDO...";
             btn.disabled = true;
 
             setTimeout(() => {
-                alert("PEDIDO CONFIRMADO! 🎉\nA Lorena Perfumaria agradece sua preferência. Em breve entraremos em contato para a entrega.");
+                alert(`PEDIDO CONFIRMADO! 🎉\n\nObrigado, ${name}!\nEntregaremos em: ${address}.\nEntraremos em contato no ${phone}.`);
                 cart = [];
                 updateCart();
                 closeAll();
+                // Limpar campos
+                document.getElementById('custName').value = '';
+                document.getElementById('custPhone').value = '';
+                document.getElementById('custAddress').value = '';
+                document.getElementById('deliveryForm').classList.remove('show');
                 btn.innerText = "CONFIRMAR PEDIDO";
                 btn.disabled = false;
             }, 2000);
